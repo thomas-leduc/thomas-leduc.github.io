@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Sortable - Display as grid</title>
+  <title>Complexity</title>
+  <!-- https://jqueryui.com/sortable/#display-grid -->
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/complexity/style.css">
   <style>
@@ -22,6 +23,18 @@
 <body>
  
 <ul id="sortable">
+  <script>
+  cities = ['Rome', 'London', 'Barcelona', 'New York', 'Kaysersberg', 'Pedraza', 'Marrakesh', 
+	'St Johns', 'Pingyao', 'Kowloon', 'Truro', 'Trento', 'Durham', 'Augsburg', 'Mittenwald', 
+	'San Juan', 'Toxteth', 'Idstein', 'Mantova', 'Gloucester', 'Goslar', 'Lincoln', 'Vienna', 
+	'Bacolod City', 'Manchester', 'Barcelona', 'La Paz', 'St Petersburg', 'Zermatt', 'Venlo', 
+	'Copenhagen', 'Lund', 'Brixen', 'York', 'Wells', 'Wiesbaden', 'Annecy', 'Venice'];
+
+  for (var i = 0; i < cities.length; i++) {
+    document.write(`<li class="ui-state-default">${1+i}. ${cities[i]} <img src="thumbnails/${1+i}a.jpg" width="300px"/></li>`);
+  }
+  </script>
+  <!--
   <li class="ui-state-default">1. Rome <img src="thumbnails/1a.jpg" width="300px"/></li>
   <li class="ui-state-default">2. London <img src="thumbnails/2a.jpg" width="300px"/></li>
   <li class="ui-state-default">3. Barcelona <img src="thumbnails/3a.jpg" width="300px"/></li>
@@ -60,6 +73,7 @@
   <li class="ui-state-default">36. Wiesbaden <img src="thumbnails/36a.jpg" width="300px"/></li>
   <li class="ui-state-default">37. Annecy <img src="thumbnails/37a.jpg" width="300px"/></li>
   <li class="ui-state-default">38. Venice <img src="thumbnails/38a.jpg" width="300px"/></li>
+  -->
 </ul>
  
 </body>
