@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Complexity 3</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/tab0.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/tab0.js"></script>
+    <script>
+     var cities = {
+       0: 'Rome', 1: 'London', 2: 'Barcelona', 3: 'New York', 4: 'Kaysersberg', 5: 'Pedraza', 6: 'Marrakesh', 7: 'St Johns', 8: 'Pingyao', 9: 'Kowloon', 10: 'Truro', 11: 'Trento', 12: 'Durham', 13: 'Augsburg', 14: 'Mittenwald', 15: 'San Juan', 16: 'Toxteth', 17: 'Idstein', 18: 'Mantova', 19: 'Gloucester', 20: 'Goslar', 21: 'Lincoln', 22: 'Vienna', 23: 'Bacolod City', 24: 'Manchester', 25: 'Barcelona', 26: 'La Paz', 27: 'St Petersburg', 28: 'Zermatt', 29: 'Venlo', 30: 'Copenhagen', 31: 'Lund', 32: 'Brixen', 33: 'York', 34: 'Wells', 35: 'Wiesbaden', 36: 'Annecy', 37: 'Venice'
+     };
+    // console.log('>>> TL', Object.keys(cities).length);
+    // console.table(cities);
+      $( function() {
+	  $( "#tabs" ).tabs();
+      } );
+    </script>
+  </head>
+  <body>
+    
+    <div id="tabs">
+      <ul>
+	<li><a href="#tabs-0">Clustering</a></li>
+	<li><a href="#tabs-1">Low complexity</a></li>
+	<li><a href="#tabs-2">Medium complexity</a></li>
+	<li><a href="#tabs-3">High complexity</a></li>
+      </ul>
+
+      <!-- ============================================================ -->
+      <div id="tabs-0">
+	<div class="ui-widget ui-helper-clearfix">
+	  
+	  <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+	    <script>
+	      for (var i = 0; i < Object.keys(cities).length; i++) {
+		  tmp = '<li class="ui-widget-content ui-corner-tr">';
+		  tmp += `<h5 class="ui-widget-header">${1+i}. ${cities[i]}</h5>`;
+		  tmp += `<img src="thumbnails/${1+i}a.jpg" alt="${1+i}. ${cities[i]}" width="96" height="72">`;
+		  tmp += `<a href="large/${1+i}a.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>`;
+		  tmp += '</li>';
+		  document.write(tmp);
+	      }
+	      </script>
+	  </ul>
+	  
+	  <div id="lowComplexity" class="ui-widget-content ui-state-default">
+	    <h4 class="ui-widget-header">Low complexity</h4>
+	  </div>
+	  
+	  <div id="mediumComplexity" class="ui-widget-content ui-state-default">
+	    <h4 class="ui-widget-header">Medium complexity</h4>
+	  </div>
+	  
+	  <div id="highComplexity" class="ui-widget-content ui-state-default">
+	    <h4 class="ui-widget-header">High complexity</h4>
+	  </div>
+	  
+	</div> 
+      </div>
+
+      <!-- ============================================================ -->
+      <div id="tabs-1">
+	<p>Low</p>
+      </div>
+
+      <!-- ============================================================ -->
+      <div id="tabs-2">
+	<p>Medium</p>
+      </div>
+
+      <!-- ============================================================ -->
+      <div id="tabs-3">
+	<p>High</p>
+      </div>
+
+    </div>
+  </body>
+</html>
