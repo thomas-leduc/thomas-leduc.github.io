@@ -6,6 +6,7 @@
     <title>Complexity 3</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/tab0.css">
+    <link rel="stylesheet" href="css/tab123.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/tab0.js"></script>
@@ -13,12 +14,23 @@
       var cities = {
 	  1: "Rome", 2: "London", 3: "Barcelona", 4: "New York", 5: "Kaysersberg", 6: "Pedraza", 7: "Marrakesh", 8: "St Johns", 9: "Pingyao", 10: "Kowloon", 11: "Truro", 12: "Trento", 13: "Durham", 14: "Augsburg", 15: "Mittenwald", 16: "San Juan", 17: "Toxteth", 18: "Idstein", 19: "Mantova", 20: "Gloucester", 21: "Goslar", 22: "Lincoln", 23: "Vienna", 24: "Bacolod City", 25: "Manchester", 26: "Barcelona", 27: "La Paz", 28: "St Petersburg", 29: "Zermatt", 30: "Venlo", 31: "Copenhagen", 32: "Lund", 33: "Brixen", 34: "York", 35: "Wells", 36: "Wiesbaden", 37: "Annecy", 38: "Venice"
       };
+      var complexities = {
+	  'low': [1,2,3],
+	  'medium': [4,5,6],
+	  'high': [7,8,9]
+      };
       // console.log('>>> TL', Object.keys(cities).length);
       // console.table(cities);
       $( function() {
 	  $( "#tabs" ).tabs();
+	  $( "#sortable1" ).sortable();
+	  $( "#sortable1" ).disableSelection();
+	  $( "#sortable2" ).sortable();
+	  $( "#sortable2" ).disableSelection();
+	  $( "#sortable3" ).sortable();
+	  $( "#sortable3" ).disableSelection();
       } );
-      </script>
+    </script>
   </head>
   <body>
     <div id="tabs">
@@ -64,19 +76,40 @@
       
       <!-- ============================================================ -->
       <div id="tabs-1">
-	<p>Low</p>
+	<ul id="sortable1">
+	  <script>
+	    for (var i = 0; i < complexities['low'].length; i++) {
+		cityId = complexities['low'][i];
+		document.write(`<li class="ui-state-default">${cityId}. ${cities[cityId]} <img src="thumbnails/${cityId}a.jpg" width="300px"/></li>`);
+	    }
+	    </script>
+	</ul>
       </div>
-
+      
       <!-- ============================================================ -->
       <div id="tabs-2">
-	<p>Medium</p>
+	<ul id="sortable2">
+	  <script>
+	    for (var i = 0; i < complexities['medium'].length; i++) {
+		cityId = complexities['medium'][i];
+		document.write(`<li class="ui-state-default">${cityId}. ${cities[cityId]} <img src="thumbnails/${cityId}a.jpg" width="300px"/></li>`);
+	    }
+	    </script>
+	</ul>
       </div>
-
+      
       <!-- ============================================================ -->
       <div id="tabs-3">
-	<p>High</p>
+	<ul id="sortable3">
+	  <script>
+	    for (var i = 0; i < complexities['high'].length; i++) {
+		cityId = complexities['high'][i];
+		document.write(`<li class="ui-state-default">${cityId}. ${cities[cityId]} <img src="thumbnails/${cityId}a.jpg" width="300px"/></li>`);
+	    }
+	    </script>
+	</ul>
       </div>
-
+      
     </div>
   </body>
 </html>
