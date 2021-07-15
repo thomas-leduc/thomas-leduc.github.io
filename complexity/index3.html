@@ -21,8 +21,27 @@
       };
       // console.log('>>> TL', Object.keys(cities).length);
       // console.table(cities);
-      $( function() {
+      $(document).ready(function() {
 	  $( "#tabs" ).tabs();
+	  $("#tabs").dblclick(function(){
+	      complexities.low = [];
+	      complexities.medium = [];
+	      complexities.high = [];
+
+	      $("#lowComplexity").find("#cityId").filter(function() {
+		  complexities.low.push( Number($(this).attr("value")) );
+	      });
+	      $("#mediumComplexity").find("#cityId").filter(function() {
+		  complexities.medium.push( Number($(this).attr("value")) );
+	      });
+	      $("#highComplexity").find("#cityId").filter(function() {
+		  complexities.high.push( Number($(this).attr("value")) );
+	      });
+	      
+	      console.log(complexities.low);
+	      console.log(complexities.medium);
+	      console.log(complexities.high);
+	  });
 	  $( "#sortable1" ).sortable();
 	  $( "#sortable1" ).disableSelection();
 	  $( "#sortable2" ).sortable();
