@@ -1,6 +1,6 @@
 $( function() {
 
-    // There's the gallery and the lowComplexity
+    // There's the gallery and the lowComplexity, mediumComplexity, and highComplexity
     var $gallery = $( "#gallery" ),
 	$lowComplexity = $( "#lowComplexity" ),
 	$mediumComplexity = $( "#mediumComplexity" ),

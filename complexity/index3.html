@@ -10,18 +10,17 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/tab0.js"></script>
     <script>
-     var cities = {
-       0: 'Rome', 1: 'London', 2: 'Barcelona', 3: 'New York', 4: 'Kaysersberg', 5: 'Pedraza', 6: 'Marrakesh', 7: 'St Johns', 8: 'Pingyao', 9: 'Kowloon', 10: 'Truro', 11: 'Trento', 12: 'Durham', 13: 'Augsburg', 14: 'Mittenwald', 15: 'San Juan', 16: 'Toxteth', 17: 'Idstein', 18: 'Mantova', 19: 'Gloucester', 20: 'Goslar', 21: 'Lincoln', 22: 'Vienna', 23: 'Bacolod City', 24: 'Manchester', 25: 'Barcelona', 26: 'La Paz', 27: 'St Petersburg', 28: 'Zermatt', 29: 'Venlo', 30: 'Copenhagen', 31: 'Lund', 32: 'Brixen', 33: 'York', 34: 'Wells', 35: 'Wiesbaden', 36: 'Annecy', 37: 'Venice'
-     };
-    // console.log('>>> TL', Object.keys(cities).length);
-    // console.table(cities);
+      var cities = {
+	  1: "Rome", 2: "London", 3: "Barcelona", 4: "New York", 5: "Kaysersberg", 6: "Pedraza", 7: "Marrakesh", 8: "St Johns", 9: "Pingyao", 10: "Kowloon", 11: "Truro", 12: "Trento", 13: "Durham", 14: "Augsburg", 15: "Mittenwald", 16: "San Juan", 17: "Toxteth", 18: "Idstein", 19: "Mantova", 20: "Gloucester", 21: "Goslar", 22: "Lincoln", 23: "Vienna", 24: "Bacolod City", 25: "Manchester", 26: "Barcelona", 27: "La Paz", 28: "St Petersburg", 29: "Zermatt", 30: "Venlo", 31: "Copenhagen", 32: "Lund", 33: "Brixen", 34: "York", 35: "Wells", 36: "Wiesbaden", 37: "Annecy", 38: "Venice"
+      };
+      // console.log('>>> TL', Object.keys(cities).length);
+      // console.table(cities);
       $( function() {
 	  $( "#tabs" ).tabs();
       } );
-    </script>
+      </script>
   </head>
   <body>
-    
     <div id="tabs">
       <ul>
 	<li><a href="#tabs-0">Clustering</a></li>
@@ -29,18 +28,19 @@
 	<li><a href="#tabs-2">Medium complexity</a></li>
 	<li><a href="#tabs-3">High complexity</a></li>
       </ul>
-
+      
       <!-- ============================================================ -->
       <div id="tabs-0">
 	<div class="ui-widget ui-helper-clearfix">
 	  
 	  <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
 	    <script>
-	      for (var i = 0; i < Object.keys(cities).length; i++) {
+	      for (var i = 1; i <= Object.keys(cities).length; i++) {
 		  tmp = '<li class="ui-widget-content ui-corner-tr">';
-		  tmp += `<h5 class="ui-widget-header">${1+i}. ${cities[i]}</h5>`;
-		  tmp += `<img src="thumbnails/${1+i}a.jpg" alt="${1+i}. ${cities[i]}" width="96" height="72">`;
-		  tmp += `<a href="large/${1+i}a.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>`;
+		  tmp += `<h5 class="ui-widget-header">${i}. ${cities[i]}</h5>`;
+		  tmp += `<input id="cityId" type="hidden" name="cityId" value="${i}">`;
+		  tmp += `<img src="thumbnails/${i}a.jpg" alt="${i}. ${cities[i]}" width="96" height="72">`;
+		  tmp += `<a href="large/${i}a.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>`;
 		  tmp += '</li>';
 		  document.write(tmp);
 	      }
@@ -61,7 +61,7 @@
 	  
 	</div> 
       </div>
-
+      
       <!-- ============================================================ -->
       <div id="tabs-1">
 	<p>Low</p>
