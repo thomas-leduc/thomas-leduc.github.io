@@ -14,20 +14,24 @@
       var cities = {
 	  1: "Rome", 2: "London", 3: "Barcelona", 4: "New York", 5: "Kaysersberg", 6: "Pedraza", 7: "Marrakesh", 8: "St Johns", 9: "Pingyao", 10: "Kowloon", 11: "Truro", 12: "Trento", 13: "Durham", 14: "Augsburg", 15: "Mittenwald", 16: "San Juan", 17: "Toxteth", 18: "Idstein", 19: "Mantova", 20: "Gloucester", 21: "Goslar", 22: "Lincoln", 23: "Vienna", 24: "Bacolod City", 25: "Manchester", 26: "Barcelona", 27: "La Paz", 28: "St Petersburg", 29: "Zermatt", 30: "Venlo", 31: "Copenhagen", 32: "Lund", 33: "Brixen", 34: "York", 35: "Wells", 36: "Wiesbaden", 37: "Annecy", 38: "Venice"
       };
+      var cities = {
+	  1: "Rome", 2: "London", 3: "Barcelona", 4: "New York", 5: "Kaysersberg"
+      };
       var complexities = {
+	  'galleryIsEmpty': false,
 	  'low': [1,2,3],
 	  'medium': [4,5,6],
 	  'high': [7,8,9]
       };
-      // console.log('>>> TL', Object.keys(cities).length);
-      // console.table(cities);
+      
       $(document).ready(function() {
-	  $( "#tabs" ).tabs();
+	  $("#tabs").tabs();
 	  $("#tabs").dblclick(function(){
+	      complexities.galleryIsEmpty = (0 == $("#gallery").find("input").size());
 	      complexities.low = [];
 	      complexities.medium = [];
 	      complexities.high = [];
-
+	      
 	      $("#lowComplexity").find("#cityId").filter(function() {
 		  complexities.low.push( Number($(this).attr("value")) );
 	      });
@@ -38,6 +42,7 @@
 		  complexities.high.push( Number($(this).attr("value")) );
 	      });
 	      
+	      console.log(complexities.galleryIsEmpty);
 	      console.log(complexities.low);
 	      console.log(complexities.medium);
 	      console.log(complexities.high);
