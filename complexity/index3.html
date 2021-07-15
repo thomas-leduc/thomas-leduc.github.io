@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/tab0.js"></script>
+    <script src="js/tab123.js"></script>
     <script>
       var cities = {
 	  1: "Rome", 2: "London", 3: "Barcelona", 4: "New York", 5: "Kaysersberg", 6: "Pedraza", 7: "Marrakesh", 8: "St Johns", 9: "Pingyao", 10: "Kowloon", 11: "Truro", 12: "Trento", 13: "Durham", 14: "Augsburg", 15: "Mittenwald", 16: "San Juan", 17: "Toxteth", 18: "Idstein", 19: "Mantova", 20: "Gloucester", 21: "Goslar", 22: "Lincoln", 23: "Vienna", 24: "Bacolod City", 25: "Manchester", 26: "Barcelona", 27: "La Paz", 28: "St Petersburg", 29: "Zermatt", 30: "Venlo", 31: "Copenhagen", 32: "Lund", 33: "Brixen", 34: "York", 35: "Wells", 36: "Wiesbaden", 37: "Annecy", 38: "Venice"
@@ -23,16 +24,16 @@
 	  'medium': [4,5,6],
 	  'high': [7,8,9]
       };
-      
       $(document).ready(function() {
 	  $("#tabs").tabs();
-	  $("#tabs").dblclick(function(){
+	  
+	  $("#tabs").click(function(){
 	      complexities.galleryIsEmpty = (0 == $("#gallery").find("input").size());
 	      complexities.low = [];
 	      complexities.medium = [];
 	      complexities.high = [];
 	      
-	      $("#lowComplexity").find("#cityId").filter(function() {
+	      $("#lowComplexity").find("input").filter(function() { // TL 15.07.2021: DEBUG from "#cityId" to "input"
 		  complexities.low.push( Number($(this).attr("value")) );
 	      });
 	      $("#mediumComplexity").find("#cityId").filter(function() {
@@ -41,7 +42,11 @@
 	      $("#highComplexity").find("#cityId").filter(function() {
 		  complexities.high.push( Number($(this).attr("value")) );
 	      });
+	      // $("#sortable1").html($("#sortable1").html())
+	      // $("#sortable2").html($("#sortable2").html())
+	      // $("#sortable3").html($("#sortable3").html())
 	      
+	      console.clear();
 	      console.log(complexities.galleryIsEmpty);
 	      console.log(complexities.low);
 	      console.log(complexities.medium);
@@ -53,6 +58,18 @@
 	  $( "#sortable2" ).disableSelection();
 	  $( "#sortable3" ).sortable();
 	  $( "#sortable3" ).disableSelection();
+
+	/*
+	    $("#btn-tabs-1").click(function(){
+		// alert('ok');
+		// $("#sortable1").html(displayClusterImages('low'));
+		// $("#sortable1").html(`<ul><li>${complexities.low}</li></ul>`);
+		$("#sortable1_SUBST").html(`<ul id="sortable1"><li>${displayClusterImages('low')}</li></ul>`);
+	});
+	*/
+
+	  // var current_index = $("#tabs").tabs("option","active");
+	  // $("#tabs").tabs('load', current_index);	  
       } );
     </script>
   </head>
@@ -100,13 +117,14 @@
       
       <!-- ============================================================ -->
       <div id="tabs-1">
+	<!--
+	<button id="btn-tabs-1">Refresh</button>
+	<p id="sortable1_SUBST">Click the button.</p>
+	-->
 	<ul id="sortable1">
 	  <script>
-	    for (var i = 0; i < complexities['low'].length; i++) {
-		cityId = complexities['low'][i];
-		document.write(`<li class="ui-state-default">${cityId}. ${cities[cityId]} <img src="thumbnails/${cityId}a.jpg" width="300px"/></li>`);
-	    }
-	    </script>
+	    displayClusterImages('low');
+	  </script>
 	</ul>
       </div>
       
@@ -114,11 +132,8 @@
       <div id="tabs-2">
 	<ul id="sortable2">
 	  <script>
-	    for (var i = 0; i < complexities['medium'].length; i++) {
-		cityId = complexities['medium'][i];
-		document.write(`<li class="ui-state-default">${cityId}. ${cities[cityId]} <img src="thumbnails/${cityId}a.jpg" width="300px"/></li>`);
-	    }
-	    </script>
+	    displayClusterImages('medium');
+	  </script>
 	</ul>
       </div>
       
@@ -126,11 +141,8 @@
       <div id="tabs-3">
 	<ul id="sortable3">
 	  <script>
-	    for (var i = 0; i < complexities['high'].length; i++) {
-		cityId = complexities['high'][i];
-		document.write(`<li class="ui-state-default">${cityId}. ${cities[cityId]} <img src="thumbnails/${cityId}a.jpg" width="300px"/></li>`);
-	    }
-	    </script>
+	    displayClusterImages('high');
+	  </script>
 	</ul>
       </div>
       
