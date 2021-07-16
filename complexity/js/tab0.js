@@ -45,7 +45,8 @@ function submit1() {
 	document.cookie = `highComplexity=[${complexities.high}]; SameSite=Strict`;
 	
 	console.log("***", document.cookie); //~ DEBUG
-	window.location.href = "index31.html";
+	window.location.href = "index41.html";
+	
     } else {
 	alert('There are still images to be sorted!');
     }
