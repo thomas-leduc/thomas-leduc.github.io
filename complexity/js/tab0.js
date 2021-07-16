@@ -1,5 +1,57 @@
-$( function() {
+function listGalleryImages(cities) {
+    tmp = "";
+    for (var i = 1; i <= Object.keys(cities).length; i++) {
+	tmp += '  <li class="ui-widget-content ui-corner-tr">\n';
+	tmp += `    <h5 class="ui-widget-header">${i}. ${cities[i]}</h5>\n`;
+	tmp += `    <input id="cityId" type="hidden" name="cityId" value="${i}" />\n`;
+	tmp += `    <img src="thumbnails/${i}a.jpg" alt="${i}. ${cities[i]}" width="96" height="72" />\n`;
+	tmp += `    <a href="large/${i}a.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>\n`;
+	tmp += '  </li>\n';
+    }
+    return tmp;
+}
 
+function parseCookies() {
+    if ("" == document.cookie) {
+	return undefined;
+    } else {
+	const reducer = (accumulator, currentValue) => {
+	    let [key, value] = currentValue.split("=");
+	    return { ...accumulator, [key]: eval(decodeURIComponent(value)) };
+	};
+	cookies = document.cookie.split("; ").reduce(reducer, {});
+	return cookies;
+    }
+}
+
+function submit1() {
+    var complexities = { 'low': [], 'medium': [], 'high': [] };
+    
+    galleryIsEmpty = (0 == $("#gallery").find("input").size());
+    if (galleryIsEmpty) {
+	$("#lowComplexity").find("input").filter(function() { // TL 15.07.2021: DEBUG from "#cityId" to "input"
+	    complexities.low.push( Number($(this).attr("value")) );
+	});
+	$("#mediumComplexity").find("#cityId").filter(function() {
+	    complexities.medium.push( Number($(this).attr("value")) );
+	});
+	$("#highComplexity").find("#cityId").filter(function() {
+	    complexities.high.push( Number($(this).attr("value")) );
+	});
+	
+	// SET COOKIES
+	document.cookie = `lowComplexity=[${complexities.low}]; SameSite=Strict`;
+	document.cookie = `mediumComplexity=[${complexities.medium}]; SameSite=Strict`;
+	document.cookie = `highComplexity=[${complexities.high}]; SameSite=Strict`;
+	
+	console.log("***", document.cookie); //~ DEBUG
+	window.location.href = "index31.html";
+    } else {
+	alert('There are still images to be sorted!');
+    }
+}
+
+$(document).ready( function() {
     // There's the gallery and the lowComplexity, mediumComplexity, and highComplexity
     var $gallery = $( "#gallery" ),
 	$lowComplexity = $( "#lowComplexity" ),
@@ -36,7 +88,7 @@ $( function() {
             classifyImageMediumComplexity( ui.draggable );
 	}
     });
-
+    
     // Let the mediumComplexity be droppable, accepting the gallery items
     $highComplexity.droppable({
 	accept: "#gallery > li",
