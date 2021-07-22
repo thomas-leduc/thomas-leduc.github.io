@@ -7,7 +7,6 @@ function submit0() {
     var gender = $('#gender :selected').text();
     var age = $("#age").attr("value");
     var skills = $('#skills :selected').text();
-    var date0 = new Date(Date.now());
     
     //~ SET COOKIES
     document.cookie = `uid=${Math.round(Math.random() * 1e9)}; SameSite=Strict`;
@@ -17,7 +16,7 @@ function submit0() {
     document.cookie = `gender=${gender}; SameSite=Strict`;
     document.cookie = `age=${age}; SameSite=Strict`;
     document.cookie = `skills=${skills}; SameSite=Strict`;
-    document.cookie = `date0=${date0}; SameSite=Strict`;
+    document.cookie = `date0=${new Date(Date.now())}; SameSite=Strict`;
     
     console.log("***", document.cookie); //~ DEBUG
     
