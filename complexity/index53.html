@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Complexity 53</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/style0.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/commons.js"></script>
+    <script>
+      var cookies = parseCookies();
+      var finalResult = surveyContent(cookies);
+
+      $(document).ready( function() {
+      // DELETE COOKIES
+      deleteCookies();
+      } )
+    </script>
+  </head>
+  <body onload="filename.value=cookies.uid; filecontent.value=finalResult;">
+    
+    <div class="left">&nbsp;</div>
+    <div class="main">
+      <div style="font-size:130%;">
+        Please store the file <output id="filename" style="color:red;"></output> on your disk, then upload it <span style="color:red;"><a href="">here</a></span>.<br/> Thank you very much for the time you spent on this survey!<br/><br/>
+      </div>
+      <div style="font-size:70%; white-space:pre;"><output id="filecontent" style="color:grey;"></output></div>
+    </div>
+    
+  </body>
+</html>
