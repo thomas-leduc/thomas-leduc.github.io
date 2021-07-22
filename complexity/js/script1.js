@@ -1,11 +1,35 @@
+function fisherYatesShuffle(array) {
+    let counter = array.length;
+    // While there are elements in the array
+    while (counter > 0) {
+        //~ Pick a random index
+        let index = Math.floor(Math.random() * counter);
+        //~ Decrease counter by 1
+        counter--;
+	//~ And swap the last element with it
+        let temp = array[counter];
+        array[counter] = array[index];
+        array[index] = temp;
+    }
+    return array;
+}
+
+function range(size, startAt=0) {
+    return [...Array(size).keys()].map(i => i + startAt);
+}
+
 function listGalleryImages(cities) {
     tmp = "";
-    for (var i = 1; i <= Object.keys(cities).length; i++) {
+    nImages = Object.keys(cities).length;
+    shuffle = fisherYatesShuffle(range(nImages, startAt=1));
+    
+    for (var i = 0; i < nImages; i++) {
+	j = shuffle[i];
 	tmp += '  <li class="ui-widget-content ui-corner-tr">\n';
-	tmp += `    <h5 class="ui-widget-header">${i}. ${cities[i]}</h5>\n`;
-	tmp += `    <input id="cityId" type="hidden" name="cityId" value="${i}" />\n`;
-	tmp += `    <img src="thumbnails/${i}a.jpg" alt="${i}. ${cities[i]}" width="96" height="72" />\n`;
-	tmp += `    <a href="large/${i}a.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>\n`;
+	tmp += `    <h5 class="ui-widget-header">${j}. ${cities[j]}</h5>\n`;
+	tmp += `    <input id="cityId" type="hidden" name="cityId" value="${j}" />\n`;
+	tmp += `    <img src="thumbnails/${j}a.jpg" alt="${j}. ${cities[j]}" width="96" height="72" />\n`;
+	tmp += `    <a href="large/${j}a.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>\n`;
 	tmp += '  </li>\n';
     }
     return tmp;
@@ -47,7 +71,7 @@ function submit1() {
 	document.cookie = `mediumComplexity=[${complexities.medium}]; SameSite=Strict`;
 	document.cookie = `highComplexity=[${complexities.high}]; SameSite=Strict`;
 	document.cookie = `date1=${new Date(Date.now())}; SameSite=Strict`;
-
+	
 	console.log("***", document.cookie); //~ DEBUG
 	window.location.href = "index52.html";
 	
