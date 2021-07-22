@@ -13,16 +13,12 @@
       var cities = {
       1: "Rome", 2: "London", 3: "Barcelona", 4: "New York", 5: "Kaysersberg", 6: "Pedraza", 7: "Marrakesh", 8: "St Johns", 9: "Pingyao", 10: "Kowloon", 11: "Truro", 12: "Trento", 13: "Durham", 14: "Augsburg", 15: "Mittenwald", 16: "San Juan", 17: "Toxteth", 18: "Idstein", 19: "Mantova", 20: "Gloucester", 21: "Goslar", 22: "Lincoln", 23: "Vienna", 24: "Bacolod City", 25: "Manchester", 26: "Barcelona", 27: "La Paz", 28: "St Petersburg", 29: "Zermatt", 30: "Venlo", 31: "Copenhagen", 32: "Lund", 33: "Brixen", 34: "York", 35: "Wells", 36: "Wiesbaden", 37: "Annecy", 38: "Venice"
       };
-      var cities = { 1: "Rome", 2: "London", 3: "Barcelona", 4: "New York", 5: "Kaysersberg" }; //~ DEBUG
+      //~ var cities = { 1: "Rome", 2: "London", 3: "Barcelona", 4: "New York", 5: "Kaysersberg" }; //~ DEBUG
     </script>
   </head>
   <body>
     <div style="color:red; font-size:130%;">Drag and drop each image in the gallery into its corresponding complexity group. Then press the  <input type='submit' value='Submit' onClick='submit1()'> button.</div>
     <div class="ui-widget ui-helper-clearfix">
-      <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
-	<script>document.write(listGalleryImages(cities));</script>
-      </ul>
-      
       <div id="lowComplexity" class="ui-widget-content ui-state-default">
         <h4 class="ui-widget-header">Low complexity</h4>
       </div>
@@ -34,6 +30,11 @@
       <div id="highComplexity" class="ui-widget-content ui-state-default">
         <h4 class="ui-widget-header">High complexity</h4>
       </div>
+
+      <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+	<script>document.write(listGalleryImages(cities));</script>
+      </ul>
+      
     </div> 
   </body>
 </html>
