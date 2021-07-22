@@ -35,22 +35,6 @@ function listGalleryImages(cities) {
     return tmp;
 }
 
-function parseCookies() {
-    if ("" == document.cookie) {
-	return undefined;
-    } else {
-	const reducer = (accumulator, currentValue) => {
-	    let [key, value] = currentValue.split("=");
-	    return { ...accumulator, [key]: decodeURIComponent(value) };
-	};
-	cookies = document.cookie.split("; ").reduce(reducer, {});
-	cookies.lowComplexity = eval(cookies.lowComplexity);
-	cookies.mediumComplexity = eval(cookies.mediumComplexity);
-	cookies.highComplexity = eval(cookies.highComplexity);
-	return cookies;
-    }
-}
-
 function submit1() {
     var complexities = { 'low': [], 'medium': [], 'high': [] };
     
