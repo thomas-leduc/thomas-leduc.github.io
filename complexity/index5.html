@@ -5,77 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Complexity 5</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="css/tab0.css">
-    <link rel="stylesheet" href="css/tab123.css">
-    <style>
-    .left {
-      float: left;
-      width: 20%;
-      text-align: center;
-    }
-    .main {
-      float: left;
-      width: 60%;
-      padding: 0 20px;
-    }
-    .right {
-      float: left;
-      width: 20%;
-      padding: 15px;
-    }
-    @media only screen and (max-width: 620px) {
-      /* For mobile phones: */
-      .menu, .main, .right {
-        width: 100%;
-      }
-    }
-
-    table, th, td {
-      border: 0px solid black;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 15px;
-    }
-    th {
-      text-align: right;
-      background-color: #cccccc;
-    }
-    td {
-      text-align: left;
-      background-color: #999999;
-    }
-    </style>
+    <link rel="stylesheet" href="css/style0.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="js/tab0.js"></script>
-    <script src="js/tab123.js"></script>
-    <script>
-      var cities = {
-      1: "Rome", 2: "London", 3: "Barcelona", 4: "New York", 5: "Kaysersberg", 6: "Pedraza", 7: "Marrakesh", 8: "St Johns", 9: "Pingyao", 10: "Kowloon", 11: "Truro", 12: "Trento", 13: "Durham", 14: "Augsburg", 15: "Mittenwald", 16: "San Juan", 17: "Toxteth", 18: "Idstein", 19: "Mantova", 20: "Gloucester", 21: "Goslar", 22: "Lincoln", 23: "Vienna", 24: "Bacolod City", 25: "Manchester", 26: "Barcelona", 27: "La Paz", 28: "St Petersburg", 29: "Zermatt", 30: "Venlo", 31: "Copenhagen", 32: "Lund", 33: "Brixen", 34: "York", 35: "Wells", 36: "Wiesbaden", 37: "Annecy", 38: "Venice"
-      };
-      var cities = { 1: "Rome", 2: "London", 3: "Barcelona", 4: "New York", 5: "Kaysersberg" }; //~ DEBUG
-    </script>
+    <script src="js/script0.js"></script>
   </head>
   <body>
   
   <div class="left">&nbsp;</div>
   <div class="main">
-    <form action="" oninput="ageDisplay.value=parseInt(age.value)">
+    <form oninput="ageDisplay.value=parseInt(age.value)" autocomplete="on">
       <table style="width:100%">
+        <!--
+        <tr>
+	<th><label for="uid">User ID</label></th>
+	<td><input type="text" id="uid" name="uid" value="" size="40" readonly></td>
+        </tr>
+        -->
         <tr>
 	<th><label for="fname">First name</label></th>
-	<td><input type="text" id="fname" name="fname" value=""></td>
+	<td><input type="text" id="fname" name="fname" value="Thomas" size="40" autofocus></td>
         </tr>
 
         <tr>
 	<th><label for="lname">Last name</label></th>
-	<td><input type="text" id="lname" name="lname" value=""></td>
+	<td><input type="text" id="lname" name="lname" value="Leduc" size="40"></td>
         </tr>
 
         <tr>
 	<th><label for="city">City</label></th>
-	<td><input type="text" id="city" name="city" value="Nantes"></td>
+	<td><input type="text" id="city" name="city" value="Nantes" size="40"></td>
         </tr>
 
         <tr>
@@ -83,7 +42,7 @@
 	<td>
 	  <select name="gender" id="gender">
 	    <option value="Female">Female</option>
-	    <option value="Male">Male</option>
+	    <option value="Male" selected>Male</option>
 	    <option value="None of the above">None of the above</option>
 	  </select>
 	</td>
@@ -91,7 +50,7 @@
 
         <tr>
 	<th><label for="age">Age</label></th>
-	<td><input type="range" id="age" name="age" value="20"><output name="ageDisplay"/></td>
+	<td><input type="range" id="age" name="age" value="50" min="15" max="95"><output name="ageDisplay"/></td>
         </tr>
 
         <tr>
@@ -101,14 +60,14 @@
 	    <option value="Expert of perception / neurosciences / psychology">Expert of perception / neurosciences / psychology</option>
 	    <option value="Expert of physics / lighting / sensing technologies">Expert of physics / lighting / sensing technologies</option>
 	    <option value="Expert of architecture / urban planning / design">Expert of architecture / urban planning / design</option>
-	    <option value="Researcher in any other field or student">Researcher in any other field or student</option>
+	    <option value="Researcher in any other field or student" selected>Researcher in any other field or student</option>
 	    <option value="None of the above">None of the above</option>
 	  </select>
 	</td>
         </tr>
 
         <tr>
-	<th colspan="2" style="text-align: center"><input type="submit" value="Submit"/></th>
+	<th colspan="2" style="text-align: center"><input type="button" value="Submit" onClick='submit0()'/></th>
         </tr>
 
       </table>
