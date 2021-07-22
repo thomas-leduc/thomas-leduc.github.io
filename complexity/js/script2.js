@@ -20,9 +20,9 @@ function submit2() {
     });
 
     document.cookie = `date2=${new Date(Date.now())}; SameSite=Strict`;
-    document.cookie = `lowComplexity=${complexities.low}; SameSite=Strict`;
-    document.cookie = `mediumComplexity=${complexities.medium}; SameSite=Strict`;
-    document.cookie = `highComplexity=${complexities.high}; SameSite=Strict`;
+    document.cookie = `lowComplexity=[${complexities.low}]; SameSite=Strict`;
+    document.cookie = `mediumComplexity=[${complexities.medium}]; SameSite=Strict`;
+    document.cookie = `highComplexity=[${complexities.high}]; SameSite=Strict`;
 
     //~ $("#sortable1").find("img").filter(function() { console.log('===', $(this).attr("value")); });
     console.log("***", document.cookie); //~ DEBUG

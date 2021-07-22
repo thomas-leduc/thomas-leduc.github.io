@@ -42,8 +42,8 @@ skills = ${cookies.skills}
 date0 = ${cookies.date0}
 date1 = ${cookies.date1}
 date2 = ${cookies.date2}
-low = ${cookies.lowComplexity}
-medium = ${cookies.mediumComplexity}
-high = ${cookies.highComplexity}
+low = [${cookies.lowComplexity}]
+medium = [${cookies.mediumComplexity}]
+high = [${cookies.highComplexity}]
 `;
 }
