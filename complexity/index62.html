@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Complexity 62</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/style62.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/commons6.js"></script>
+    <script src="js/script62.js"></script>
+    <script>
+      var cookies = parseCookies();
+    </script>
+  </head>
+  
+  <body onload=" bootstrap(); ">
+    
+    <div class="left">&nbsp;</div>
+    <div class="main">
+      <form action="https://script.google.com/macros/s/AKfycbwmGdcLeLvHYTiJxFMv0GsIYYxrH9yhZhLETetj2sc/exec"
+	method="post" oninput="ageDisplay.value=parseInt(age.value)" autocomplete="on">
+	<input type="text" id="uid" name="uid"/>
+	<input type="text" id="lowComplexity" name="lowComplexity"/>
+	<input type="text" id="mediumComplexity" name="mediumComplexity"/>
+	<input type="text" id="highComplexity" name="highComplexity"/>
+	<input type="text" id="date0" name="date0"/>
+	<input type="text" id="date1" name="date1"/>
+	<input type="text" id="date2" name="date2"/>
+	<table style="width:100%">
+          <!--
+              <tr>
+		<th><label for="uid">User ID</label></th>
+		<td><input type="text" id="uid" name="uid" size="40" readonly></td>
+              </tr>
+          <tr>
+	    <th><label for="fname">First name</label></th>
+	    <td><input type="text" id="fname" name="fname" size="40" autofocus></td>
+          </tr>
+	  
+          <tr>
+	    <th><label for="lname">Last name</label></th>
+	    <td><input type="text" id="lname" name="lname" size="40"></td>
+          </tr>
+              -->
+	  
+          <tr>
+	    <th><label for="city">City</label></th>
+	    <td><input type="text" id="city" name="city" value="" size="40"></td>
+          </tr>
+	  
+          <tr>
+	    <th><label for="gender">Gender</label></th>
+	    <td>
+	      <select name="gender" id="gender">
+		<option value="Female" selected>Female</option>
+		<option value="Male">Male</option>
+		<option value="None of the above">None of the above</option>
+	      </select>
+	    </td>
+          </tr>
+	  
+          <tr>
+	    <th><label for="age">Age</label></th>
+	    <td><input type="range" id="age" name="age" value="20" min="15" max="95"><output name="ageDisplay"/></td>
+          </tr>
+	  
+          <tr>
+	    <th><label for="skills">Skills</label></th>
+	    <td>
+	      <select name="skills" id="skills">
+		<option value="Expert of perception / neurosciences / psychology">Expert of perception / neurosciences / psychology</option>
+		<option value="Expert of physics / lighting / sensing technologies">Expert of physics / lighting / sensing technologies</option>
+		<option value="Expert of architecture / urban planning / design">Expert of architecture / urban planning / design</option>
+		<option value="Researcher in any other field or student" selected>Researcher in any other field or student</option>
+		<option value="None of the above">None of the above</option>
+	      </select>
+	    </td>
+          </tr>
+	  
+          <tr>
+	    <!-- <th colspan="2" style="text-align: center"><input type="button" value="Submit" onClick='submit0()'/></th> -->
+	    <th colspan="2" style="text-align: center"><input type="submit" value="Submit"/></th>
+          </tr>
+	  
+	</table>
+	
+      </form>
+    </div>
+    
+  </body>
+</html>
