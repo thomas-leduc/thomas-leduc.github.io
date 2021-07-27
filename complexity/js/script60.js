@@ -29,7 +29,7 @@ function listGalleryImages(cities) {
 	tmp += `    <h5 class="ui-widget-header">${j}. ${cities[j]}</h5>\n`;
 	tmp += `    <input id="cityId" type="hidden" name="cityId" value="${j}" />\n`;
 	tmp += `    <img src="thumbnails/${j}a.jpg" alt="${j}. ${cities[j]}" width="96" height="72" />\n`;
-	tmp += `    <a href="large/${j}a.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>\n`;
+	tmp += `    <a href="medium/${j}a.jpg" title="View larger image" class="ui-icon ui-icon-zoomin">View larger</a>\n`;
 	tmp += '  </li>\n';
     }
     return tmp;
@@ -206,7 +206,7 @@ $(document).ready( function() {
             setTimeout(function() {
 		img.dialog({
 		    title: title,
-		    width: 400,
+		    width: 620,
 		    modal: true
 		});
             }, 1 );
