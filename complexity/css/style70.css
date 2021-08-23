@@ -1,0 +1,37 @@
+.left {
+    float: left;
+    width: 20%;
+    text-align: center;
+}
+.main {
+    float: left;
+    width: 60%;
+    padding: 0 20px;
+}
+.right {
+    float: left;
+    width: 20%;
+    padding: 15px;
+}
+@media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .menu, .main, .right {
+        width: 100%;
+    }
+}
+
+table, th, td {
+    border: 0px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 15px;
+}
+th {
+    text-align: right;
+    background-color: #cccccc;
+}
+td {
+    text-align: left;
+    background-color: #999999;
+}
