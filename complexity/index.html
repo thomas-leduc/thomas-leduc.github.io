@@ -3,36 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Complexity</title>
-    <!-- https://jqueryui.com/sortable/#display-grid -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/complexity/style.css">
-    <style>
-      #sortable { list-style-type: none; margin: 0; padding: 0; width: 1250px; }
-      #sortable li { margin: 3px 3px 3px 0; padding: 1px; float: left; width: 300px; height: 255px; font-size: 1.3em; text-align: center; }
-    </style>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-      var cities = {
-	  1: "Rome", 2: "London", 3: "Barcelona", 4: "New York", 5: "Kaysersberg", 6: "Pedraza", 7: "Marrakesh", 8: "St Johns", 9: "Pingyao", 10: "Kowloon", 11: "Truro", 12: "Trento", 13: "Durham", 14: "Augsburg", 15: "Mittenwald", 16: "San Juan", 17: "Toxteth", 18: "Idstein", 19: "Mantova", 20: "Gloucester", 21: "Goslar", 22: "Lincoln", 23: "Vienna", 24: "Bacolod City", 25: "Manchester", 26: "Barcelona", 27: "La Paz", 28: "St Petersburg", 29: "Zermatt", 30: "Venlo", 31: "Copenhagen", 32: "Lund", 33: "Brixen", 34: "York", 35: "Wells", 36: "Wiesbaden", 37: "Annecy", 38: "Venice"
-      };
-      
-      $( function() {
-	  $( "#sortable" ).sortable();
-	  $( "#sortable" ).disableSelection();
-      } );
-    </script>
+    <title>Complexity 7</title>
+    <link rel="stylesheet" href="css/style70.css">
+    <script src="js/script70.js"></script>
   </head>
+
   <body>
-    
-    <ul id="sortable">
-      <script>
-	for (var i = 1; i <= Object.keys(cities).length; i++) {
-	    document.write(`<li class="ui-state-default">${i}. ${cities[i]}<img src="thumbnails/${i}a.jpg" width="300px"/></li>`);
-	}
-	</script>
-    </ul>
+
+    <div class="left">&nbsp;</div>
+    <div class="main">
+      <form action="index71.html">
+      <div class="introduction">
+      <br/>Link: <a href="https://thomas-leduc.github.io/complexity/">https://thomas-leduc.github.io/complexity/</a><br/><br/>
+      Dear Sir/Madam,<br/>
+      You are invited to answer this online questionnaire as part of a research project on the perception of urban complexity. <span style="background-color: #ffff00;">We estimate that you will need 10 minutes to complete this online survey. We propose you to sort a gallery of <span style="background-color: #ffff00;">25</span> photos by visual complexity of each urban scene</span>.<br/>
+      <ul>
+        <li><a href="https://vertragus.github.io/urbanphotocomplexity/" target="_blank"><span style="background-color: #ffff00;">The entire photo gallery</a>.</li>
+        <li><a href="https://youtu.be/_VYU6uUH60k" target="_blank"><span style="background-color: #ffff00;">A video tutorial demonstrating how to complete the questionnaire</span></a>.</li>
+      </ul>
+      <table>
+        <tr >
+	<th>Low complexity</th>
+	<th>Medium complexity</th>
+	<th>High complexity</th>
+        </tr>
+        <tr >
+	<th><img src="img/red.jpg" alt="Low complexity" width="168" height="126" /></th>
+	<th><img src="img/green.jpg" alt="Medium complexity" width="168" height="126" /></th>
+	<th><img src="img/blue.jpg" alt="High complexity" width="168" height="126" /></th>
+        </tr>
+      </table>
+      <br/>The researchers are very grateful for your time.<br/>
+      Yours sincerely,<br/><br/>
+      <input type="submit" value="Start" onClick="submit70()"><br/><br/>
+      </div>
+      </form>
+    </div>
     
   </body>
 </html>
