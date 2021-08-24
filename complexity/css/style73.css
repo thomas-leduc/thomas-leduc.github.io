@@ -19,22 +19,16 @@
         width: 100%;
     }
 }
-.introduction {
-    background-color: #cccccc;
-	text-align: center;
-}
-table {
-	width:100%;
-	border:3px solid white;
+
+table, th, td {
+    border: 0px solid black;
     border-collapse: collapse;
 }
 th, td {
-	width:33%;
-	border: 2px solid white;
-    padding: 7px;
+    padding: 15px;
 }
 th {
-    text-align: center;
+    text-align: right;
     background-color: #cccccc;
 }
 td {

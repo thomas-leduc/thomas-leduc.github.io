@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Complexity 71</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="css/style71.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/commons7.js"></script>
+    <script src="js/script71.js"></script>
+  </head>
+  <body>
+    <div style="font-size:130%; background:#eee; float: left; width: 97%; padding:0.4em;">To see the entire photo gallery, <a href="https://vertragus.github.io/urbanphotocomplexity/" target="_blank">click here</a>. Drag and drop each image in the gallery into its corresponding complexity group. Then press the  <input type='submit' value='Submit' onClick='submit71()'> button.</div>
+    <div class="ui-widget ui-helper-clearfix">
+      <div id="lowComplexity" class="ui-widget-content ui-state-default">
+        <h4 class="ui-widget-header">Low complexity</h4>
+      </div>
+      
+      <div id="mediumComplexity" class="ui-widget-content ui-state-default">
+        <h4 class="ui-widget-header">Medium complexity</h4>
+      </div>
+      
+      <div id="highComplexity" class="ui-widget-content ui-state-default">
+        <h4 class="ui-widget-header">High complexity</h4>
+      </div>
+
+      <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+	<script>document.write(listGalleryImages(cities));</script>
+      </ul>
+      
+    </div> 
+  </body>
+</html>
