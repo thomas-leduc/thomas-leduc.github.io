@@ -10,7 +10,7 @@ function getUid() {
     });
 }
 
-function submit70() {
+function submit80() {
     // SET COOKIES
     document.cookie = `uid=${getUid()}; SameSite=Strict`;
     document.cookie = `date0=${new Date(Date.now())}; SameSite=Strict`;

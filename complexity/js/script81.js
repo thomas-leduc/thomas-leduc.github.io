@@ -38,7 +38,7 @@ function listGalleryImages(cities) {
     return tmp;
 }
 
-function submit71() {
+function submit81() {
     var complexities = { 'low': [], 'medium': [], 'high': [] };
     
     galleryIsEmpty = (0 == $("#gallery").find("input").size());
@@ -60,7 +60,7 @@ function submit71() {
 	document.cookie = `date1=${new Date(Date.now())}; SameSite=Strict`;
 	
 	//~ console.log("***", document.cookie); //~ DEBUG
-	window.location.href = "index72.html";
+	window.location.href = "index82.html";
 	
     } else {
 	alert('There are still images to assign!');

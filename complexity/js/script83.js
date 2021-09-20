@@ -1,4 +1,4 @@
-function bootstrap73(cookies) {
+function bootstrap83(cookies) {
     uid.value = cookies.uid;
     lowComplexity.value = `[${cookies.lowComplexity}]`; 
     mediumComplexity.value = `[${cookies.mediumComplexity}]`; 
@@ -9,7 +9,7 @@ function bootstrap73(cookies) {
     date3.value = 'n/a';
 }
 
-function submit73() {
+function submit83() {
     date3.value = new Date(Date.now());
     deleteCookies();
 }

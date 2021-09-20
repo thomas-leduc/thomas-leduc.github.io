@@ -39,6 +39,9 @@ var cities = {
     38: {"name": "Venice", "url": "https://www.flickr.com/photos/75487768@N04/6793692062/"}
 };
 
+var helpVideo = 'To see the help video, <a href="https://vimeo.com/609665071" target="_blank">click here</a>';
+var entirePhotoGallery = 'To see the entire photo gallery, <a href="https://vertragus.github.io/urbanphotocomplexity/" target="_blank">click here</a>';
+
 //~ 24.08.2021
 /* 19, 25, 26, 33 */
 toDelete = Array().concat([5, 8, 11, 14, 20, 21, 22, 23], [29, 30, 32, 34, 37]);
