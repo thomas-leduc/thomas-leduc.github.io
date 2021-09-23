@@ -12,6 +12,7 @@
     <script src="js/script82.js"></script>
     <script>
       var cookies = parseCookies();
+      document.cookie = 'visitPanel=l; SameSite=Strict';
     </script>
   </head>
   
@@ -19,9 +20,9 @@
     <div style="color:black; font-size:130%;"><script>document.write(helpVideo);</script>. <script>document.write(entirePhotoGallery);</script>. Order the images by <b>increasing complexity</b> (left to right and then top to bottom) in each of the three panels. Then press the  <input type='submit' value='Submit' onClick='submit82()'> button.</div>
     <div id="tabs">
       <ul>
-	<li><a href="#tabs-1">Low complexity</a></li>
-	<li><a href="#tabs-2">Medium complexity</a></li>
-	<li><a href="#tabs-3">High complexity</a></li>
+	<li><a href="#tabs-1" onclick="visitPanel('l');">Low complexity</a></li>
+	<li><a href="#tabs-2" onclick="visitPanel('m');">Medium complexity</a></li>
+	<li><a href="#tabs-3" onclick="visitPanel('h');">High complexity</a></li>
       </ul>
       
       <!-- ============================================================ -->

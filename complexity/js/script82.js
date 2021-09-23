@@ -8,29 +8,40 @@ function listClusterImages(cookies, complexityLevel) {
 }
 
 function submit82() {
+    var cookies = parseCookies();
     var complexities = { 'low': [], 'medium': [], 'high': [] };
-    $("#sortable1").find("img").filter(function() {
-	complexities.low.push( Number($(this).attr("value")) );
-    });
-    $("#sortable2").find("img").filter(function() {
-	complexities.medium.push( Number($(this).attr("value")) );
-    });
-    $("#sortable3").find("img").filter(function() {
-	complexities.high.push( Number($(this).attr("value")) );
-    });
 
-    document.cookie = `date2=${new Date(Date.now())}; SameSite=Strict`;
-    document.cookie = `lowComplexity=[${complexities.low}]; SameSite=Strict`;
-    document.cookie = `mediumComplexity=[${complexities.medium}]; SameSite=Strict`;
-    document.cookie = `highComplexity=[${complexities.high}]; SameSite=Strict`;
+    if ((cookies.visitPanel.includes('l')) && (cookies.visitPanel.includes('m')) && (cookies.visitPanel.includes('h'))) {
+      $("#sortable1").find("img").filter(function() {
+	  complexities.low.push( Number($(this).attr("value")) );
+      });
+      $("#sortable2").find("img").filter(function() {
+	  complexities.medium.push( Number($(this).attr("value")) );
+      });
+      $("#sortable3").find("img").filter(function() {
+	  complexities.high.push( Number($(this).attr("value")) );
+      });
 
+      document.cookie = `date2=${new Date(Date.now())}; SameSite=Strict`;
+      document.cookie = `lowComplexity=[${complexities.low}]; SameSite=Strict`;
+      document.cookie = `mediumComplexity=[${complexities.medium}]; SameSite=Strict`;
+      document.cookie = `highComplexity=[${complexities.high}]; SameSite=Strict`;
+
+      window.location.href = "index83.html";
+    } else {
+      alert('Please sort the images in each of the three panels!');
+    }
     //~ $("#sortable1").find("img").filter(function() { console.log('===', $(this).attr("value")); });
     //~ console.log("***", document.cookie); //~ DEBUG
 
     //~ var cookies = parseCookies();
     //~ var finalResult = surveyContent(cookies);
     //~ alert(finalResult); //~ DEBUG
-    window.location.href = "index83.html";
+}
+
+function visitPanel(panelLabel) {
+    var cookies = parseCookies();
+    document.cookie = `visitPanel=${cookies.visitPanel}${panelLabel}; SameSite=Strict`;
 }
 
 $(document).ready(function() {
